@@ -56,18 +56,18 @@ export class ProductDetailComponent implements OnInit {
 
   private getMockProduct() {
     return {
-      title: 'iPhone 11 128 GB Negro Telcel',
-      price: 11699,
-      description: 'Pantalla Liquid Retina HD de 6.1 pulgadas. Chip A13 Bionic. Sistema de cámara dual de 12 MP con modo Noche y grabación de video 4K. Cámara frontal TrueDepth de 12 MP. Face ID. Hasta 17 horas de reproducción de video.',
+      title: 'Producto no encontrado',
+      price: 0,
+      description: 'Producto no encontrado',
       images: [
         'https://http2.mlstatic.com/D_NQ_NP_2X_746233-MLA46114830679_052021-F.webp',
         'https://http2.mlstatic.com/D_NQ_NP_2X_971299-MLA46114830712_052021-F.webp',
         'https://http2.mlstatic.com/D_NQ_NP_2X_617623-MLA46114830683_052021-F.webp'
       ],
       paymentMethods: ['Tarjeta de crédito', 'Débito', 'MercadoPago'],
-      sellerName: 'APPLE Distribuidor Autorizado',
-      sellerRating: 4.9,
-      availableStock: 15
+      sellerName: 'xx',
+      sellerRating: 0.0,
+      availableStock: 0
     };
   }
 }
