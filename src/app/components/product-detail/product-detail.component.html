@@ -1,0 +1,64 @@
+<div class="outer-wrapper" *ngIf="product">
+  <div class="container three-columns">
+    <!-- 1st column: Images -->
+    <div class="image-section">
+      <div class="thumbnail-list">
+        <img
+          *ngFor="let img of product.images"
+          [src]="img"
+          class="thumbnail"
+          [class.active]="img === selectedImage"
+          (click)="changeImage(img)"
+          (mouseenter)="setHoveredImage(img)"
+          (mouseleave)="clearHoveredImage()"
+        />
+      </div>
+      <div class="main-image">
+        <img [src]="hoveredImage || selectedImage" alt="Producto" />
+      </div>
+    </div>
+
+    <!-- 2nd column: Title, Rating, Price, Description -->
+    <div class="info-section">
+      <h1 class="title">{{ product.title }}</h1>
+      <ng-container *ngIf="product.ratings?.length">
+        <div class="rating">
+          <span class="avg-rating">{{ getAverageRating(product.ratings) | number:'1.1-1' }}</span>
+          <span class="stars">
+            <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+              <span [class.filled]="i < getAverageRating(product.ratings)">★</span>
+            </ng-container>
+          </span>
+          <span class="rating-count">({{ product.ratings.length }})</span>
+        </div>
+      </ng-container>
+      <p class="price">$ {{ product.price | number:'1.0-0' }}</p>
+      <p class="description">{{ product.description }}</p>
+    </div>
+
+    <!-- 3rd column: Seller & Payment Methods -->
+    <div class="side-section">
+      <div class="seller-box">
+        <p><strong>Vendido por:</strong> {{ product.sellerName }}</p>
+        <p><strong>Calificación del vendedor:</strong> {{ product.sellerRating }}</p>
+        <p><strong>Stock disponible:</strong> {{ product.availableStock }}</p>
+      </div>
+      <div class="payment">
+        <strong>Métodos de pago:</strong>
+        <ul>
+          <li *ngFor="let method of product.paymentMethods">{{ method }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="product" class="product-container">
+    <h2>Opiniones del producto</h2>
+    <div class="scroll-container">
+      <!-- Recorremos el array de reviews con *ngFor -->
+       <p *ngFor="let review of product.reviews" class="review">
+        {{ review }}
+      </p>
+  </div>
+</div>
+</div>

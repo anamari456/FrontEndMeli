@@ -1,0 +1,81 @@
+.outer-wrapper {
+  border-left: 150px solid #ffe600;
+  border-right: 150px solid #ffe600;
+  box-sizing: border-box;
+  background: none;
+}
+
+.ml-header {
+  font-family: Arial, sans-serif;
+  background-color: #ffe600;
+  padding: 8px;
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .logo {
+      height: 36px;
+    }
+
+    .search-box {
+      flex: 1;
+      padding: 8px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .promo {
+      background: #122b74;
+      color: white;
+      border: none;
+      padding: 4px 12px;
+      font-size: 12px;
+      text-align: left;
+      border-radius: 16px;
+      line-height: 1.1;
+
+      span {
+        font-weight: bold;
+        display: block;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 8px;
+
+    .location {
+      font-size: 14px;
+    }
+
+    nav a {
+      margin-right: 16px;
+      font-size: 14px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .user-actions a {
+      margin-left: 16px;
+      font-size: 14px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .badge {
+      background: #0053f9;
+      color: white;
+      font-size: 10px;
+      border-radius: 6px;
+      padding: 2px 4px;
+      margin-left: 4px;
+    }
+  }
+}
